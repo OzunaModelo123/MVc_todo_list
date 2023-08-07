@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Todo.Data;
-using TodoListMVC.Models;
+using Todo.Models;
 
 namespace Todo.Controllers
 {
@@ -22,9 +17,9 @@ namespace Todo.Controllers
         // GET: TodoItems
         public async Task<IActionResult> Index()
         {
-              return _context.TodoItem != null ? 
-                          View(await _context.TodoItem.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.TodoItem'  is null.");
+            return _context.TodoItem != null ?
+                        View(await _context.TodoItem.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.TodoItem'  is null.");
         }
 
         // GET: TodoItems/Details/5
@@ -150,14 +145,14 @@ namespace Todo.Controllers
             {
                 _context.TodoItem.Remove(todoItem);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TodoItemExists(int id)
         {
-          return (_context.TodoItem?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.TodoItem?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

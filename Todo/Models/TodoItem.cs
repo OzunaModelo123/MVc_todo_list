@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TodoListMVC.Models
+﻿namespace Todo.Models
 {
     public class TodoItem
     {

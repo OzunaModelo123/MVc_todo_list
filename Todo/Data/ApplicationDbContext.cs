@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TodoListMVC.Models;
 
 namespace Todo.Data
 {
@@ -10,6 +9,6 @@ namespace Todo.Data
             : base(options)
         {
         }
-        public DbSet<TodoListMVC.Models.TodoItem>? TodoItem { get; set; }
+        public DbSet<Todo.Models.TodoItem>? TodoItem { get; set; }
     }
 }
