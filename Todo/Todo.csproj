@@ -8,7 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\HomeController.cs" />
+    <Compile Remove="Views\Shared\**" />
+    <Content Remove="Views\Shared\**" />
+    <EmbeddedResource Remove="Views\Shared\**" />
+    <None Remove="Views\Shared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Index.cshtml" />
+    <Content Remove="Views\Privacy.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml.css" />
   </ItemGroup>
 
   <ItemGroup>

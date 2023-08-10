@@ -18,6 +18,11 @@ namespace Todo.Controllers
             return View();
         }
 
+        public IActionResult TodoList()
+        {
+            return RedirectToAction("Index", "TodoItems");
+        }
+
         public IActionResult Privacy()
         {
             return View();
